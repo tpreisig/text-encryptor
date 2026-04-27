@@ -3,27 +3,47 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.6.0/remixicon.css"/>
     <script src="./script.js" defer></script>
     <link rel="stylesheet" href="./style.css">
     <title>Text Encryptor</title>
 </head>
 <body>
   <div class="container">
-        <h1>Text Encryptor</h1>
+        <h1>
+            <i class="ri-lock-line"></i>
+            <span>Text Encryptor</span>
+        </h1>
         <label for="message">Message:</label>
-        <textarea id="message" rows="5" aria-label="Enter message to encrypt or decrypt">Caesar used it!</textarea>
-        <label for="key">Key:</label>
-        <input type="text" id="key" value="1a" aria-label="Enter encryption key">
-        <div class="error" id="keyError">Key must be non-empty and use only allowed characters.</div>
+        <textarea id="message" rows="5"></textarea>
+
+        <label for="encryption-key">Key:</label>
+        <input type="text" id="encryption-key" value="secretkey" aria-label="Enter encryption key">
+        <div class="error" id="keyError" role="alert">Key must be at least 3 characters long and use only allowed characters.</div>
+
         <div class="buttons">
-            <button id="encrypt-btn" aria-label="Encrypt the message">Encrypt</button>
-            <button id="decrypt-btn" aria-label="Decrypt the message">Decrypt</button>
-            <button id="clear-btn" aria-label="Clear inputs and result">Clear</button>
+            <button id="encrypt-btn" aria-label="Encrypt the message">
+                <i class="ri-lock-line"></i>
+                <span>Encrypt</span>
+            </button>
+            <button id="decrypt-btn" aria-label="Decrypt the message">
+                <i class="ri-lock-unlock-line"></i>
+                <span>Decrypt</span>
+            </button>
+            <button id="clear-btn" aria-label="Clear inputs and result">
+                <i class="ri-eraser-line"></i>
+                <span>Clear</span>
+            </button>
         </div>
-        <label for="result">Result:</label>
+
+        <label>Result:</label>
         <div id="result" aria-live="polite"></div>
-        <button id="copy-btn" aria-label="Copy result to clipboard">Copy Result</button>
+
+        <button id="copy-btn" aria-label="Copy result to clipboard">
+            <i class="ri-file-copy-line"></i>
+            <span>Copy Result</span>
+        </button>
         <div id="copy-status">Copied to clipboard!</div>
-    </div>
+    </div>    
 </body>
 </html>
